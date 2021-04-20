@@ -1,3 +1,5 @@
+import kotlin.math.max
+
 fun main() {
         // Test values here
         println(lengthOfLongestSubstring("aabcab"))
@@ -11,9 +13,9 @@ private fun lengthOfLongestSubstring(s: String): Int {
         var i = 0
         while (j < n) {
             if (map.containsKey(s[j])) {
-                i = Math.max(map[s[j]]!!, i)
+                i = max(map[s[j]]!!, i)
             }
-            ans = Math.max(ans, j - i + 1)
+            ans = max(ans, j - i + 1)
             map[s[j]] = j + 1
             j++
         }
